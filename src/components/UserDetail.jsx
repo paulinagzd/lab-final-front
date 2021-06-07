@@ -1,17 +1,24 @@
-import { Button, Card, Row, Col, PageHeader, Avatar, Layout } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Card, Row, Col, PageHeader, Layout, Avatar, Select, Input} from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined, DownloadOutlined } from '@ant-design/icons';
+import { userDetails, areas } from '../mocks/userDetailsMock';
 const { Header, Content, Footer, Sider } = Layout; 
 
+const { Option } = Select;
+const { Search } = Input;
 const { Meta } = Card;
+
+const handleChange = (e) => {
+  console.log(e)
+}
+const onSearch = (e) => {
+  console.log(e)
+}
 
 const UserDetail = () => {
   return (
     <>
-      <Header style={{ zIndex: 1, width: '100%', background: '#FFFFFF', height: '100px'}}>
-        <img src={'https://ii.ct-stc.com/2/logos/empresas/2003/05/08/tca-software-solutions-92226890A07C6E43thumbnail.gif'} />
-      </Header>
       <Row>
-        <Row>
+        {/* <Row>
           <Col span={22}>
             <PageHeader
               className="detail-page-header"
@@ -19,96 +26,36 @@ const UserDetail = () => {
               title="Detalle del Usuario TODO"
             />
           </Col>
+        </Row> */}
+            </Row>
+
+      <Row>
+        <Row>
+          <Col span={12}>
+            <Search placeholder="Ingresa nombre del usuario" onSearch={onSearch} style={{ width: 200 }} />
+          </Col>
+          <Col span={6}>
+            <Select defaultValue="TI" style={{ width: "20%" }} onChange={handleChange}>
+              {areas.map((area) =>
+                <Option value={area}>{area}</Option>
+              )}
+            </Select> 
+          </Col>
         </Row>
-        <Row gutter={16}>
-          <Col span={8}>
+        <Row>
+        {userDetails.map((details) =>
+          <Col span={22}>
             <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
+              style={{ width: '90%' }}
               >
               <Meta
                 avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
+                title={details.name}
+                description={details.id}
               />
             </Card>
           </Col>
-          <Col span={8}>
-            <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
-            </Card>
-          </Col>
-          <Col span={8}>
-            <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
-            </Card>
-          </Col>
-          <Col span={8}>
-            <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
-            </Card>
-          </Col>
+        )}
         </Row>
       </Row>
     </>

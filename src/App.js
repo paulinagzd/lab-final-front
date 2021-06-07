@@ -13,22 +13,15 @@ const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
     
-  return (
-    // <div className="App">
-    //     <Layout>
-    //     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }} >header</Header>
-
-    //       <Sider style={{height: '100%'}}>left sidebar</Sider>
-    //       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64, height: '100%'}}>
-    //         <Demo/>
-    //       </Content>
-    //       <Sider>right sidebar</Sider>
-    //       <Footer>footer</Footer>
-
-    //     </Layout>
-    // </div>
+  return (    
     <>
-        <UserDetail />
+      <Header style={{ zIndex: 1, width: '100%', background: '#FFFFFF', height: '100px'}}>
+        <img 
+          src={'https://ii.ct-stc.com/2/logos/empresas/2003/05/08/tca-software-solutions-92226890A07C6E43thumbnail.gif'} 
+          alt="logo"
+        />
+      </Header>
+      <UserDetail />
     </>
 
 
