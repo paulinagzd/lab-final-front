@@ -1,12 +1,15 @@
 import Demo from './components/login'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 // import { routes } from './routeConstants'
-import UserDetail from './components/UserDetail';
+import UserDashboardComponent from './components/UsersDashboard/UserDashboardComponent';
+import UserDetail from "./components/UserDetail"
+import login from './components/login'
 
 import 'antd/dist/antd.css'; 
 import './App.css';
+import React from 'react';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout; 
 
@@ -14,22 +17,35 @@ const { Header, Content, Footer, Sider } = Layout;
 function App() {
     
   return (
-    // <div className="App">
-    //     <Layout>
-    //     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }} >header</Header>
+    <div>
+      <BrowserRouter>
+        <Switch>
+              <Route path="/login" component={login}/>
+              <Route path="/userdetail" component={UserDetail}/>
+              <Route path="/users" component={UserDashboardComponent}/>
+              <Redirect to="/login"/>
+        </Switch>
+      </BrowserRouter>
+    </div>
+    // <React.Fragment>
+    //   <div className="App">
+    //       <Layout>
+    //       <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }} >header</Header>
 
-    //       <Sider style={{height: '100%'}}>left sidebar</Sider>
-    //       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64, height: '100%'}}>
-    //         <Demo/>
-    //       </Content>
-    //       <Sider>right sidebar</Sider>
-    //       <Footer>footer</Footer>
+    //         <Sider style={{height: '100%'}}>left sidebar</Sider>
+    //         <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64, height: '100%'}}>
+    //           <Demo/>
+    //         </Content>
+    //         <Sider>right sidebar</Sider>
+    //         <Footer>footer</Footer>
 
-    //     </Layout>
-    // </div>
-    <>
-        <UserDetail />
-    </>
+    //       </Layout>
+    //   </div>
+    //   <>
+    //       <UserDetail />
+    //   </>
+    // </React.Fragment>
+    
 
 
 

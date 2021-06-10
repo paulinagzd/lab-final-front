@@ -1,10 +1,15 @@
 import { Button, Card, Row, Col, PageHeader, Avatar, Layout } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { useState } from 'react';
 const { Header, Content, Footer, Sider } = Layout; 
 
 const { Meta } = Card;
 
 const UserDetail = () => {
+  const [userName, setUserName] = useState(null)  
+  const [inventoryList, setInventoryList] = useState(null)
+  const [responsiveLetter, setResponsiveLetter] = useState(null)
+
   return (
     <>
       <Header style={{ zIndex: 1, width: '100%', background: '#FFFFFF', height: '100px'}}>
@@ -20,93 +25,41 @@ const UserDetail = () => {
             />
           </Col>
         </Row>
-        <Row gutter={16}>
+        <Row gutter={[16,16]}>
           <Col span={8}>
             <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
           <Col span={8}>
             <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
           <Col span={8}>
             <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
           <Col span={8}>
             <Card
-              style={{ width: 300 }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                />
-              }
-              actions={[
-                <SettingOutlined key="setting" />,
-                <EditOutlined key="edit" />,
-                <EllipsisOutlined key="ellipsis" />,
-              ]}
-              >
-              <Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title="Card title"
-                description="This is the description"
-              />
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
         </Row>
