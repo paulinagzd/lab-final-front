@@ -1,8 +1,13 @@
 import { Button, Card, Row, Col, PageHeader, Avatar, Layout } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { useState,useEffect } from 'react';
+import { Card, Row, Col, PageHeader, Layout, Avatar, Select, Input} from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined, DownloadOutlined } from '@ant-design/icons';
+import { userDetails, areas } from '../mocks/userDetailsMock';
 const { Header, Content, Footer, Sider } = Layout; 
 
+const { Option } = Select;
+const { Search } = Input;
 const { Meta } = Card;
 
 const UserDetail = (props) => {
@@ -12,11 +17,16 @@ const UserDetail = (props) => {
     setUserName(props.userName)
 });
 
+const handleChange = (e) => {
+  console.log(e)
+}
+const onSearch = (e) => {
+  console.log(e)
+}
+
+const UserDetail = () => {
   return (
     <>
-      <Header style={{ zIndex: 1, width: '100%', background: '#FFFFFF', height: '100px'}}>
-        <img src={'https://ii.ct-stc.com/2/logos/empresas/2003/05/08/tca-software-solutions-92226890A07C6E43thumbnail.gif'} />
-      </Header>
       <Row>
         <Row>
           <Col span={24}>
@@ -55,7 +65,10 @@ const UserDetail = (props) => {
               <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
-          <Col span={8}>
+        </Row>
+        <Row>
+        {userDetails.map((details) =>
+          <Col span={22}>
             <Card
               hoverable
               style={{ width: 240 }}
@@ -64,10 +77,12 @@ const UserDetail = (props) => {
               <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Col>
+        )}
         </Row>
       </Row>
     </>
   );
+}
 }
 
 export default UserDetail;
