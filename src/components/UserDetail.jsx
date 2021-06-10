@@ -1,14 +1,16 @@
 import { Button, Card, Row, Col, PageHeader, Avatar, Layout } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 const { Header, Content, Footer, Sider } = Layout; 
 
 const { Meta } = Card;
 
-const UserDetail = () => {
-  const [userName, setUserName] = useState(null)  
-  const [inventoryList, setInventoryList] = useState(null)
-  const [responsiveLetter, setResponsiveLetter] = useState(null)
+const UserDetail = (props) => {
+  const [userName, setUserName] = useState("null")  
+
+  useEffect(() => {
+    setUserName(props.userName)
+});
 
   return (
     <>
@@ -17,11 +19,11 @@ const UserDetail = () => {
       </Header>
       <Row>
         <Row>
-          <Col span={22}>
+          <Col span={24}>
             <PageHeader
               className="detail-page-header"
-              onBack={() => null}
-              title="Detalle del Usuario TODO"
+              onBack={() => window.history.back()}
+              title={userName} 
             />
           </Col>
         </Row>
