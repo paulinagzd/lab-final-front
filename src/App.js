@@ -4,7 +4,6 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 // import { routes } from './routeConstants'
 import UserDashboardComponent from './components/UsersDashboard/UserDashboardComponent';
-import UserDetail from "./components/UserDetail"
 import login from './components/login'
 
 import 'antd/dist/antd.css'; 
@@ -16,13 +15,11 @@ const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
     
-<<<<<<< HEAD
   return (
     <div>
       <BrowserRouter>
         <Switch>
               <Route path="/login" component={login}/>
-              <Route path="/userdetail" component={UserDetail}/>
               <Route path="/users" component={UserDashboardComponent}/>
               <Redirect to="/login"/>
         </Switch>
@@ -47,18 +44,6 @@ function App() {
     //   </>
     // </React.Fragment>
     
-=======
-  return (    
-    <>
-      <Header style={{ zIndex: 1, width: '100%', background: '#FFFFFF', height: '100px'}}>
-        <img 
-          src={'https://ii.ct-stc.com/2/logos/empresas/2003/05/08/tca-software-solutions-92226890A07C6E43thumbnail.gif'} 
-          alt="logo"
-        />
-      </Header>
-      <UserDetail />
-    </>
->>>>>>> 2d7d7d256211e2d03299c260b86fc92957b8359d
 
 
 
