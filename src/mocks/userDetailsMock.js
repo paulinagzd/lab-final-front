@@ -23,6 +23,12 @@ const areas = [
   "TI"
 ];
 
+const localizaciones = [
+  "CDMX", 
+  "Monterrey",
+  "Tampico"
+];
+
 export {
-  userDetails, areas
+  userDetails, areas, localizaciones
 };

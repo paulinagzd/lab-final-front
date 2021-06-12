@@ -3,7 +3,7 @@ import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 // import { routes } from './routeConstants'
-import UserDashboardComponent from './components/UsersDashboard/UserDashboardComponent';
+import UserTable from './components/UsersDashboard/UserTable';
 import login from './components/login'
 
 import 'antd/dist/antd.css'; 
@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Switch>
               <Route path="/login" component={login}/>
-              <Route path="/users" component={UserDashboardComponent}/>
+              <Route path="/users" component={UserTable}/>
               <Redirect to="/login"/>
         </Switch>
       </BrowserRouter>
